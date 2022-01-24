@@ -1,7 +1,7 @@
 <template>
   <aside class="hidden w-64 bg-gray-800 sm:block">
     <div class="py-3 text-2xl uppercase text-center tracking-widest bg-gray-900 border-b-2 border-gray-800 mb-8">
-      <router-link to="/" class="text-white">Tailmin</router-link>
+      <router-link to="/" class="text-white">Wohlig</router-link>
     </div>
 
     <nav class="text-sm text-gray-300">
