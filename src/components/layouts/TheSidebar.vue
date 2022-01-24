@@ -92,7 +92,7 @@
             </DisclosureButton>
             <DisclosurePanel>
               <ul>
-                <li>
+                <!-- <li>
                   <Disclosure v-slot="{ open }" :default-open="isUserActive">
                     <DisclosureButton
                       class="pl-8 pr-4 py-3 flex items-center w-full hover:bg-gray-700"
@@ -134,7 +134,7 @@
                             </a>
                           </li>
                         </router-link>
-                        <!-- <li class="pl-12 hover:bg-gray-700">
+                        <li class="pl-12 hover:bg-gray-700">
                           <a href="#" class="py-3 flex items-center">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -146,28 +146,28 @@
                             </svg>
                             User Detail
                           </a>
-                        </li> -->
+                        </li>
                     </DisclosurePanel>
                   </Disclosure>
-                </li>
+                </li> -->
                 <router-link v-slot="{ isExactActive, href, navigate }" to="/users" custom>
-                          <li
-                            class="pl-12"
-                            :class="[isExactActive ? 'bg-gray-500 text-gray-800' : 'hover:bg-gray-700']"
-                          >
-                            <a class="py-3 flex items-center" :href="href" @click="navigate">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5"
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                              </svg>
-                              User List
-                            </a>
-                          </li>
-                        </router-link>
+                <li
+                  class="px-8 hover:bg-gray-700"
+                  :class="[isExactActive ? 'bg-gray-500 text-gray-800' : 'hover:bg-gray-700']"
+                >
+                  <a class="py-3 flex items-center" :href="href" @click="navigate">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                    </svg>
+                    User
+                  </a>
+                </li>
+              </router-link>
                 <li class="px-8 hover:bg-gray-700">
                   <a href="#" class="py-3 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 16 16">
