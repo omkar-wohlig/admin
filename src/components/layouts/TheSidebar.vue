@@ -30,6 +30,32 @@
           </li>
         </router-link>
 
+        <li class="px-4 hover:bg-gray-700">
+          <a href="#" class="py-3 flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
+              />
+            </svg>
+            Reports
+          </a>
+        </li>
+
         <li>
           <Disclosure v-slot="{ open }" :default-open="isUserManagementActive">
             <DisclosureButton
@@ -50,7 +76,7 @@
                   d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              User Management
+              System Management
               <span class="ml-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +135,7 @@
                             </a>
                           </li>
                         </router-link>
-                        <li class="pl-12 hover:bg-gray-700">
+                        <!-- <li class="pl-12 hover:bg-gray-700">
                           <a href="#" class="py-3 flex items-center">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +147,7 @@
                             </svg>
                             User Detail
                           </a>
-                        </li>
+                        </li> -->
                       </ul>
                     </DisclosurePanel>
                   </Disclosure>
@@ -131,7 +157,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                     </svg>
-                    Roles
+                    Process
                   </a>
                 </li>
                 <li class="px-8 hover:bg-gray-700">
@@ -139,7 +165,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                     </svg>
-                    Permissions
+                    Configurations
                   </a>
                 </li>
               </ul>
@@ -147,33 +173,9 @@
           </Disclosure>
         </li>
 
-        <li class="px-4 hover:bg-gray-700">
-          <a href="#" class="py-3 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
-              />
-            </svg>
-            Reports
-          </a>
-        </li>
+        
 
-        <li class="px-4 py-2 mt-2 text-xs uppercase tracking-wider text-gray-500 font-bold">Apps</li>
+        <!-- <li class="px-4 py-2 mt-2 text-xs uppercase tracking-wider text-gray-500 font-bold">Apps</li>
 
         <li class="px-4 cursor-pointer hover:bg-gray-700">
           <a href="#" class="py-2 flex items-center">
@@ -240,7 +242,8 @@
             </svg>
             Card
           </router-link>
-        </li>
+        </li> -->
+
         <li class="px-4 py-2 mt-2 text-xs uppercase tracking-wider text-gray-500 font-bold">Pages</li>
 
         <li class="px-4 cursor-pointer hover:bg-gray-700">
