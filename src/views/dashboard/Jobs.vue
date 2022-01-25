@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between px-4 mt-4 sm:px-8">
-    <h2 class="text-2xl text-gray-600">User List</h2>
+    <h2 class="text-2xl text-gray-600">Jobs List</h2>
 
     <div class="flex items-center space-x-1 text-xs">
       <router-link to="/" class="font-bold text-indigo-700">Home</router-link>
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div>
-          <div>
+          <div class="mr-6">
             <button class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,12 +77,12 @@
                 class="h-5 w-5 text-blue-500 border-gray-300 rounded cursor-pointer focus:ring-0"
               />
             </th>
-            <th class="text-left text-gray-600">USER</th>
-            <th class="text-left text-gray-600">ROLE</th>
+            <th class="text-left text-gray-600">JOB</th>
+            <th class="text-left text-gray-600">DESCRIPTION</th>
             <th class="text-left text-gray-600">STATUS</th>
             <th class="text-left text-gray-600">LAST ACTIVITY</th>
             <th class="text-left text-gray-600">JOIN DATE</th>
-            <th class="text-right text-gray-600">ACTIONS</th>
+            <th class="text-center text-gray-600">ACTIONS</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
@@ -112,7 +112,7 @@
             </td>
             <td>{{ user.lastActivity }}</td>
             <td>{{ user.joinDate }}</td>
-            <td class="text-right">
+            <td class="text-center">
               <Menu as="div" class="relative inline-block text-left">
                 <div>
                   <MenuButton

@@ -78,10 +78,10 @@
               />
             </th>
             <th class="text-left text-gray-600">USER</th>
-            <th class="text-left text-gray-600">ROLE</th>
+            <th class="text-left text-gray-600">E-MAIL</th>
             <th class="text-left text-gray-600">STATUS</th>
             <th class="text-left text-gray-600">LAST ACTIVITY</th>
-            <th class="text-left text-gray-600">JOIN DATE</th>
+            <th class="text-left text-gray-600">ACCESS LEVEL</th>
             <th class="text-right text-gray-600">ACTIONS</th>
           </tr>
         </thead>
