@@ -435,7 +435,7 @@
       </table>
     </div>
 
-    <stureg :show="showModal" @close="showModal = false"> </stureg>
+    <create :show="showModal" @close="showModal = false"> </create>
   </div>
 </template>
 
@@ -443,14 +443,14 @@
 import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
-import stureg from '../../components/stureg.vue'
+import create from '../../components/create.vue'
 
 export default {
   components: {
     Menu,
     MenuButton,
     MenuItems,
-    stureg,
+    create,
     MenuItem,
   },
 
