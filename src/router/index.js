@@ -8,7 +8,7 @@ const routes = [
     children: [
       {
         path: '',
-        component: () => import('@/views/dashboard/Home.vue'),
+        component: () => import('@/views/dashboard/Jobs.vue'),
       },
       {
         path: 'users',
