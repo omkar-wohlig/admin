@@ -22,7 +22,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
                 />
               </svg>
               Jobs
@@ -151,23 +151,18 @@
                   </Disclosure>
                 </li> -->
                 <router-link v-slot="{ isExactActive, href, navigate }" to="/users" custom>
-                <li
-                  class="px-8 hover:bg-gray-700"
-                  :class="[isExactActive ? 'bg-gray-500 text-gray-800' : 'hover:bg-gray-700']"
-                >
-                  <a class="py-3 flex items-center" :href="href" @click="navigate">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      fill="currentColor"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                    </svg>
-                    User
-                  </a>
-                </li>
-              </router-link>
+                  <li
+                    class="px-8 hover:bg-gray-700"
+                    :class="[isExactActive ? 'bg-gray-500 text-gray-800' : 'hover:bg-gray-700']"
+                  >
+                    <a class="py-3 flex items-center" :href="href" @click="navigate">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                      </svg>
+                      User
+                    </a>
+                  </li>
+                </router-link>
                 <li class="px-8 hover:bg-gray-700">
                   <a href="#" class="py-3 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 16 16">
@@ -188,8 +183,6 @@
             </DisclosurePanel>
           </Disclosure>
         </li>
-
-        
 
         <!-- <li class="px-4 py-2 mt-2 text-xs uppercase tracking-wider text-gray-500 font-bold">Apps</li>
 
