@@ -51,7 +51,10 @@
         </div>
         <div>
           <div class="mr-6">
-            <button class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600">
+            <button
+              @click="showModal = true"
+              class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 mr-1"
@@ -431,6 +434,8 @@
         </tfoot>
       </table>
     </div>
+
+    <stureg :show="showModal" @close="showModal = false"> </stureg>
   </div>
 </template>
 
@@ -438,12 +443,14 @@
 import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
+import stureg from '../../components/stureg.vue'
 
 export default {
   components: {
     Menu,
     MenuButton,
     MenuItems,
+    stureg,
     MenuItem,
   },
 
@@ -453,6 +460,12 @@ export default {
     return {
       userList,
       selectAll,
+    }
+  },
+
+  data() {
+    return {
+      showModal: false,
     }
   },
 }
