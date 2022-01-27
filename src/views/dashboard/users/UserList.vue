@@ -50,7 +50,7 @@
           </div>
         </div>
         <div>
-          <div>
+          <div class="mr-6">
             <button class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@
             <th class="text-left text-gray-600">STATUS</th>
             <th class="text-left text-gray-600">LAST ACTIVITY</th>
             <th class="text-left text-gray-600">ACCESS LEVEL</th>
-            <th class="text-right text-gray-600">ACTIONS</th>
+            <th class="text-center text-gray-600">ACTIONS</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
@@ -112,7 +112,7 @@
             </td>
             <td>{{ user.lastActivity }}</td>
             <td>{{ user.joinDate }}</td>
-            <td class="text-right">
+            <td class="text-center">
               <Menu as="div" class="relative inline-block text-left">
                 <div>
                   <MenuButton
