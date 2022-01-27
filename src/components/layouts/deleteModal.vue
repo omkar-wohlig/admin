@@ -22,7 +22,7 @@
           </button>
         </div>
         <form>
-          <!-- <p>Canfirm the deletion of this item</p> -->
+          <!-- <p>Confirm the deletion of this item</p> -->
           <div>
             <div class="container">
               <h1>Delete Job</h1>
