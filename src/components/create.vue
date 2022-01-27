@@ -4,12 +4,12 @@
     <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
       <div class="modal-content py-4 text-left px-6">
         <div class="flex justify-center items-center pb-3">
-          <p class="text-2xl font-bold text-center">Add New Student</p>
+          <p class="text-2xl font-bold text-center">Add New Job</p>
         </div>
         <form class="mt-6">
           <!-- <p>Canfirm the deletion of this item</p> -->
           <div>
-            <label for="username" class="block text-sm text-gray-800 dark:text-gray-200">First Name</label>
+            <label for="username" class="block text-sm text-gray-800 dark:text-gray-200">Job-Name</label>
             <input
               type="text"
               v-model="firstname"
@@ -32,7 +32,7 @@
           </div>
           <div class="mt-4">
             <div class="flex items-center justify-between">
-              <label for="password" class="block text-sm text-gray-800 dark:text-gray-200">Last Name</label>
+              <label for="password" class="block text-sm text-gray-800 dark:text-gray-200">Description</label>
             </div>
             <input
               type="text"
@@ -56,7 +56,7 @@
           </div>
           <div class="mt-4">
             <div class="flex items-center justify-between">
-              <label for="password" class="block text-sm text-gray-800 dark:text-gray-200">Village/Residence</label>
+              <label for="password" class="block text-sm text-gray-800 dark:text-gray-200">Status</label>
             </div>
             <input
               type="text"
@@ -78,8 +78,33 @@
               "
             />
           </div>
-          <!--gender-->
-          <div class="mt-4">
+          
+          <!-- <div class="mt-4">
+            <div class="flex items-center justify-between">
+              <label for="password" class="block text-sm text-gray-800 dark:text-gray-200">Status</label>
+            </div>
+            <input
+              type="text"
+              v-model="residence"
+              class="
+                block
+                w-full
+                px-4
+                py-2
+                mt-2
+                text-gray-700
+                bg-white
+                border border-gray-300
+                rounded-md
+                dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600
+                focus:border-blue-500
+                dark:focus:border-blue-500
+                focus:outline-none focus:ring
+              "
+            />
+          </div> -->
+
+          <!--<div class="mt-4">
             <div class="flex items-center justify-between">
               <label for="password" class="block text-sm text-gray-800 dark:text-gray-200">Gender</label>
             </div>
@@ -104,8 +129,8 @@
               <option>Male</option>
               <option>Female</option>
             </select>
-          </div>
-          <!--end gender-->
+          </div> -->
+
           <div class="mt-6">
             <button
               type="submit"
