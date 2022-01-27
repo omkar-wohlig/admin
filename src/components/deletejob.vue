@@ -25,8 +25,8 @@
           <!-- <p>Canfirm the deletion of this item</p> -->
           <div>
             <div class="container">
-              <h1>Delete Account</h1>
-              <p>Are you sure you want to delete your account?</p>
+              <h1>Delete Job</h1>
+              <p>Are you sure you want to delete this job?</p>
 
               <div class="clearfix">
                 <button type="button" class="cancelbtn but">Cancel</button>
