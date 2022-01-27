@@ -8,12 +8,12 @@ const routes = [
     children: [
       {
         path: '',
-        component: () => import('@/views/dashboard/Jobs.vue'),
+        component: () => import('@/views/dashboard/Jobs/Jobs.vue'),
       },
       {
         path: 'users',
         name: 'user-list',
-        component: () => import('@/views/dashboard/users/UserList.vue'),
+        component: () => import('@/views/dashboard/Users/UserList.vue'),
       },
     ],
   },

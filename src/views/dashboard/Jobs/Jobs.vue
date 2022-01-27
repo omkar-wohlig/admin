@@ -445,8 +445,8 @@
 import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
-import create from '../../components/create.vue'
-import deletejob from '../../components/deletejob.vue'
+import create from '../../../components/create.vue'
+import deletejob from '../../../components/layouts/deleteModal.vue'
 
 export default {
   components: {
