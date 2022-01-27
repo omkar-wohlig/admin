@@ -199,6 +199,7 @@
                       </MenuItem>
                       <MenuItem v-slot="{ active }">
                         <button
+                          @click="showDel = true"
                           :class="[
                             active ? 'bg-red-400 text-white' : 'text-gray-900',
                             'group flex rounded-md items-center w-full px-2 py-2 text-sm',
@@ -436,6 +437,7 @@
     </div>
 
     <create :show="showModal" @close="showModal = false"> </create>
+    <deletejob :show="showDel" @close="showDel = false"> </deletejob>
   </div>
 </template>
 
@@ -444,6 +446,7 @@ import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
 import create from '../../components/create.vue'
+import deletejob from '../../components/deletejob.vue'
 
 export default {
   components: {
@@ -451,6 +454,7 @@ export default {
     MenuButton,
     MenuItems,
     create,
+    deletejob,
     MenuItem,
   },
 
@@ -466,6 +470,7 @@ export default {
   data() {
     return {
       showModal: false,
+      showDel: false,
     }
   },
 }

@@ -3,6 +3,24 @@
     <div @click.self="close_modal()" class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
     <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
       <div class="modal-content py-4 text-left px-6">
+        <div class="flex justify-end items-center pb-3">
+          <button @click="close_modal()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="img"
+              width="1em"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                fill="currentColor"
+                d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504L738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512L828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496L285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512L195.2 285.696a64 64 0 0 1 0-90.496z"
+              />
+            </svg>
+          </button>
+        </div>
         <div class="flex justify-center items-center pb-3">
           <p class="text-2xl font-bold text-center">Add New Job</p>
         </div>
@@ -78,7 +96,7 @@
               "
             />
           </div>
-          
+
           <!-- <div class="mt-4">
             <div class="flex items-center justify-between">
               <label for="password" class="block text-sm text-gray-800 dark:text-gray-200">Status</label>
