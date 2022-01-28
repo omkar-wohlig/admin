@@ -44,8 +44,6 @@
         </button> -->
       </div>
 
-      
-
       <form class="space-y-4" @submit.prevent="$router.push({ name: 'dashboard' })">
         <div class="relative text-gray-400">
           <span class="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -60,7 +58,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
               />
             </svg>
           </span>
@@ -78,7 +76,7 @@
               border border-gray-300
               focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10
             "
-            placeholder="Email address"
+            placeholder="Job-name"
             required=""
           />
         </div>
@@ -96,7 +94,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                d="M14.59 2.59c-.38-.38-.89-.59-1.42-.59H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8.83c0-.53-.21-1.04-.59-1.41l-4.82-4.83zM15 18H9c-.55 0-1-.45-1-1s.45-1 1-1h6c.55 0 1 .45 1 1s-.45 1-1 1zm0-4H9c-.55 0-1-.45-1-1s.45-1 1-1h6c.55 0 1 .45 1 1s-.45 1-1 1zm-2-6V3.5L18.5 9H14c-.55 0-1-.45-1-1z"
               />
             </svg>
           </span>
@@ -115,22 +113,58 @@
               border border-gray-300
               focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10
             "
-            placeholder="Password"
+            placeholder="Description"
           />
         </div>
 
-        <div class="flex items-center justify-between">
-          <!-- <div class="flex items-center">
+        <div class="relative text-gray-400">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2 3.99C2 2.892 2.898 2 3.99 2h16.02C21.108 2 22 2.898 22 3.99v16.02c0 1.099-.898 1.99-1.99 1.99H3.99C2.892 22 2 21.102 2 20.01V3.99zM12 10v8m0-12v2"
+              />
+            </svg>
+          </span>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required=""
+            class="
+              w-full
+              py-4
+              text-sm text-gray-900
+              rounded-md
+              pl-10
+              border border-gray-300
+              focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10
+            "
+            placeholder="Status"
+          />
+        </div>
+
+        <!-- <div class="flex items-center justify-between"> -->
+        <!-- <div class="flex items-center">
             <input
               id="remember-me"
               name="remember-me"
               type="checkbox"
               class="h-4 w-4 text-indigo-600 focus:ring-0 border-gray-300 rounded cursor-pointer"
             /> -->
-            <!-- <label for="remember-me" class="ml-2 block text-sm text-gray-900 cursor-pointer"> Remember me </label> -->
-          </div>
+        <!-- <label for="remember-me" class="ml-2 block text-sm text-gray-900 cursor-pointer"> Remember me </label> -->
+        <!-- </div> -->
 
-          <!-- <div class="text-sm">
+        <!-- <div class="text-sm">
             <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
           </div> -->
         <!-- </div> -->
