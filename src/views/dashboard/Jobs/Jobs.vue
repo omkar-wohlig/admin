@@ -51,12 +51,8 @@
         </div>
         <div>
           <div class="mr-6">
-<<<<<<< HEAD
             <router-link
               to="/create"
-=======
-            <button
->>>>>>> dcaaae7a4b32f06ec8d0449da54d9d478def779d
               class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600"
               @click="showModal = true"
             >
@@ -94,7 +90,7 @@
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
-          <tr v-for="job in visibleJobs" :visibleJobs='visibleJobs' :currentPage='currentPage' :key="job.id">
+          <tr v-for="job in userList" :key="job.id">
             <td class="p-2">
               <input
                 type="checkbox"
@@ -251,12 +247,12 @@
                   </p>
                 </div>
                 <div>
-                  <pagination>
+                  <!-- <pagination>
                     :userList="userList"
                     @page:update="updatePage"
                     :currentPage="currentPage"
                     :pageSize="pageSize"
-                  </pagination>
+                  </pagination> -->
                 </div>
               </div>
             </td>
@@ -274,11 +270,7 @@ import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
 import deletejob from '../../../components/layouts/deleteModal.vue'
-<<<<<<< HEAD
 import { useRoute } from 'vue-router'
-=======
-import pagination from '../../../components/layouts/Pagination.vue'
->>>>>>> dcaaae7a4b32f06ec8d0449da54d9d478def779d
 
 export default {
   components: {
@@ -287,7 +279,6 @@ export default {
     MenuItems,
     deletejob,
     MenuItem,
-    pagination,
   },
 
   setup() {
@@ -303,18 +294,12 @@ export default {
 
   data() {
     return {
-<<<<<<< HEAD
-=======
-      currentPage: 0,
-      pageSize: 5,
-      showModal: false,
->>>>>>> dcaaae7a4b32f06ec8d0449da54d9d478def779d
       showDel: false,
       visibleJobs: [],
     }
   },
-  
-  beforeMount: function() {
+
+  beforeMount: function () {
     this.updateJobList()
   },
 
@@ -328,7 +313,7 @@ export default {
         this.currentPage * this.pageSize,
         this.currentPage * this.pageSize + this.pageSize
       )
-      if(this.visibleJobs.length == 0 && this.currentPage>0) {
+      if (this.visibleJobs.length == 0 && this.currentPage > 0) {
         this.updatePage(this.currentPage - 1)
       }
     },
