@@ -51,8 +51,8 @@
         </div>
         <div>
           <div class="mr-6">
-            <button
-              @click="showModal = true"
+            <router-link
+              to="/createJob"
               class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600"
             >
               <svg
@@ -66,7 +66,7 @@
               </svg>
 
               Create New
-            </button>
+            </router-link>
           </div>
         </div>
       </div>

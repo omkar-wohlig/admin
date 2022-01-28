@@ -13,7 +13,7 @@ const routes = [
       {
         path: '/create',
         name: 'create-job',
-        component: () => import('@/views/dashboard/Jobs/CreateJob.vue'),
+        component: () => import('@/views/dashboard/Jobs/createJob.vue'),
       },
       {
         path: 'users',
