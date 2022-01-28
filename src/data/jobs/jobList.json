@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Bagas Kuslaksono",
+    "email": "bagas@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "10 min ago",
+    "joinDate": "Aug 17, 2021"
+  },
+  {
+    "id": 2,
+    "name": "Ahmad Jaelani",
+    "email": "jaelani@example.com",
+    "role": "Administrator",
+    "isActive": false,
+    "lastActivity": "4 hours ago",
+    "joinDate": "Feb 13, 2020"
+  },
+  {
+    "id": 3,
+    "name": "Lucy Jones",
+    "email": "lucy@example.com",
+    "role": "Author",
+    "isActive": true,
+    "lastActivity": "2 days ago",
+    "joinDate": "Mar 9, 2019"
+  },
+  {
+    "id": 4,
+    "name": "David Steele",
+    "email": "dave@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "139 days ago",
+    "joinDate": "Dec 24, 2022"
+  },
+  {
+    "id": 5,
+    "name": "Jennifer Rowe",
+    "email": "jenn@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "7 days ago",
+    "joinDate": "Jun 15, 2012"
+  },
+  {
+    "id": 6,
+    "name": "Bagas Kuslaksono",
+    "email": "bagas@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "10 min ago",
+    "joinDate": "Aug 17, 2021"
+  },
+  {
+    "id": 7,
+    "name": "Ahmad Jaelani",
+    "email": "jaelani@example.com",
+    "role": "Administrator",
+    "isActive": false,
+    "lastActivity": "4 hours ago",
+    "joinDate": "Feb 13, 2020"
+  },
+  {
+    "id": 8,
+    "name": "Lucy Jones",
+    "email": "lucy@example.com",
+    "role": "Author",
+    "isActive": true,
+    "lastActivity": "2 days ago",
+    "joinDate": "Mar 9, 2019"
+  },
+  {
+    "id": 9,
+    "name": "David Steele",
+    "email": "dave@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "139 days ago",
+    "joinDate": "Dec 24, 2022"
+  },
+  {
+    "id": 10,
+    "name": "Jennifer Rowe",
+    "email": "jenn@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "7 days ago",
+    "joinDate": "Jun 15, 2012"
+  },
+  {
+    "id": 11,
+    "name": "Jennifer Rowe",
+    "email": "jenn@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "7 days ago",
+    "joinDate": "Jun 15, 2012"
+  },
+  {
+    "id": 12,
+    "name": "Jennifer Rowe",
+    "email": "jenn@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "7 days ago",
+    "joinDate": "Jun 15, 2012"
+  },
+  {
+    "id": 13,
+    "name": "Jennifer Rowe",
+    "email": "jenn@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "7 days ago",
+    "joinDate": "Jun 15, 2012"
+  },
+  {
+    "id": 14,
+    "name": "Jennifer Rowe",
+    "email": "jenn@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "7 days ago",
+    "joinDate": "Jun 15, 2012"
+  }
+]
