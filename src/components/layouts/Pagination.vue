@@ -15,6 +15,7 @@
       this.$emit('page:update', pageNumber);
     },
     totalPages() {
+      console.log(this.userList)
       return Math.ceil(this.userList.length / this.pageSize);
     },
     showPreviousLink() {
