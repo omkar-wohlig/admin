@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
     <div class="max-w-md w-full">
-      <h2 class="text-center text-2xl font-bold text-gray-800 mb-6">Sign in to your dashboard</h2>
+      <h2 class="text-center text-2xl font-bold text-gray-800 mb-6">Add Job</h2>
 
       <div>
-        <button
+        <!-- <button
           class="
             w-full
             flex
@@ -41,14 +41,10 @@
             </g>
           </svg>
           Sign in with Google
-        </button>
+        </button> -->
       </div>
 
-      <div class="flex items-center justify-center space-x-2 my-4">
-        <span class="h-px w-full bg-gray-300"></span>
-        <span class="px-2 text-gray-500">or</span>
-        <span class="h-px w-full bg-gray-300"></span>
-      </div>
+      
 
       <form class="space-y-4" @submit.prevent="$router.push({ name: 'dashboard' })">
         <div class="relative text-gray-400">
@@ -124,20 +120,20 @@
         </div>
 
         <div class="flex items-center justify-between">
-          <div class="flex items-center">
+          <!-- <div class="flex items-center">
             <input
               id="remember-me"
               name="remember-me"
               type="checkbox"
               class="h-4 w-4 text-indigo-600 focus:ring-0 border-gray-300 rounded cursor-pointer"
-            />
-            <label for="remember-me" class="ml-2 block text-sm text-gray-900 cursor-pointer"> Remember me </label>
+            /> -->
+            <!-- <label for="remember-me" class="ml-2 block text-sm text-gray-900 cursor-pointer"> Remember me </label> -->
           </div>
 
-          <div class="text-sm">
+          <!-- <div class="text-sm">
             <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
-          </div>
-        </div>
+          </div> -->
+        <!-- </div> -->
 
         <div>
           <button
@@ -159,14 +155,14 @@
               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
             "
           >
-            Sign in
+            Submit Job
           </button>
         </div>
       </form>
 
-      <div class="mt-2 text-sm text-gray-600">
+      <!-- <div class="mt-2 text-sm text-gray-600">
         Not registered yet? <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Create an account</a>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
