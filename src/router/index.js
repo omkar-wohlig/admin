@@ -15,11 +15,6 @@ const routes = [
         name: 'user-list',
         component: () => import('@/views/dashboard/Users/UserList.vue'),
       },
-      {
-        path: '/users/create',
-        name: 'create-user',
-        component: () => import('@/views/dashboard/Users/CreateUser.vue'),
-      },
     ],
   },
   {
@@ -31,6 +26,11 @@ const routes = [
     path: '/create',
     name: 'createjob',
     component: () => import('@/views/dashboard/Jobs/createJob.vue'),
+  },
+  {
+    path: '/users/create',
+    name: 'create-user',
+    component: () => import('@/views/dashboard/Users/CreateUser.vue'),
   },
 ]
 

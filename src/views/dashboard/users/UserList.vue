@@ -51,7 +51,11 @@
         </div>
         <div>
           <div class="mr-6">
-            <button class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600">
+            <router-link
+              to="/users/create"
+              class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600"
+              @click="showModal = true"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 mr-1"
@@ -63,7 +67,7 @@
               </svg>
 
               Create New
-            </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -77,16 +81,16 @@
                 class="h-5 w-5 text-blue-500 border-gray-300 rounded cursor-pointer focus:ring-0"
               />
             </th>
-            <th class="text-left text-gray-600">USER</th>
-            <th class="text-left text-gray-600">E-MAIL</th>
+            <th class="text-left text-gray-600">NAME</th>
+            <th class="text-left text-gray-600">DESCRIPTION</th>
             <th class="text-left text-gray-600">STATUS</th>
             <th class="text-left text-gray-600">LAST ACTIVITY</th>
-            <th class="text-left text-gray-600">ACCESS LEVEL</th>
+            <th class="text-left text-gray-600">JOIN DATE</th>
             <th class="text-center text-gray-600">ACTIONS</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
-          <tr v-for="user in userList" :key="user.id">
+          <tr v-for="user in visibleUsers" :visibleUsers='visibleUsers' :currentPage="currentPage" :key="user.id">
             <td class="p-2">
               <input
                 type="checkbox"
@@ -110,6 +114,7 @@
               <span v-if="user.isActive" class="px-2 py-1 rounded text-xs text-white bg-green-500">Active</span>
               <span v-else class="px-2 py-1 rounded text-xs text-white bg-red-500">Suspended</span>
             </td>
+            <td>{{ user.status }}</td>
             <td>{{ user.lastActivity }}</td>
             <td>{{ user.joinDate }}</td>
             <td class="text-center">
@@ -200,6 +205,7 @@
                             active ? 'bg-red-400 text-white' : 'text-gray-900',
                             'group flex rounded-md items-center w-full px-2 py-2 text-sm',
                           ]"
+                          @click="showDel = true"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +235,7 @@
           <tr>
             <td colspan="7" class="py-2">
               <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                <!-- <div>
+                <div>
                   <p class="text-sm text-gray-500">
                     Showing
                     <span class="font-medium">1</span>
@@ -239,83 +245,14 @@
                     <span class="font-medium">42</span>
                     results
                   </p>
-                </div> -->
+                </div>
                 <div>
-                  <!-- <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                    <a
-                      href="#"
-                      class="
-                        relative
-                        inline-flex
-                        items-center
-                        px-2
-                        rounded-l-md
-                        border border-gray-300
-                        text-sm
-                        font-medium
-                        text-gray-500
-                        hover:bg-gray-50
-                      "
-                    >
-                      <span class="sr-only">Previous</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      aria-current="page"
-                      class="
-                        z-10
-                        bg-indigo-50
-                        border-indigo-500
-                        text-indigo-600
-                        relative
-                        inline-flex
-                        items-center
-                        px-4
-                        py-1
-                        border
-                        text-sm
-                        font-medium
-                      "
-                    >
-                      1
-                    </a>
-                    <a
-                      href="#"
-                      class="
-                        relative
-                        inline-flex
-                        items-center
-                        px-2
-                        py-1
-                        rounded-r-md
-                        border border-gray-300
-                        text-sm
-                        font-medium
-                        text-gray-500
-                        hover:bg-gray-50
-                      "
-                    >
-                      <span class="sr-only">Next</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </nav> -->
+                  <pagination
+                    :userList="userList"
+                    @page:update="updatePage"
+                    :currentPage="currentPage"
+                    :pageSize="pageSize">
+                  </pagination>
                 </div>
               </div>
             </td>
@@ -323,6 +260,8 @@
         </tfoot>
       </table>
     </div>
+
+    <deletejob :show="showDel" @close="showDel = false"> </deletejob>
   </div>
 </template>
 
@@ -330,22 +269,58 @@
 import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
+import deletejob from '../../../components/layouts/deleteModal.vue'
+import Pagination from '../../../components/layouts/Pagination.vue'
+import { useRoute } from 'vue-router'
 
 export default {
   components: {
     Menu,
     MenuButton,
     MenuItems,
+    deletejob,
     MenuItem,
+    Pagination,
   },
 
   setup() {
     const selectAll = ref(false)
+    const route = useRoute()
 
     return {
       userList,
       selectAll,
+      route,
     }
+  },
+
+  data() {
+    return {
+      currentPage: 0,
+      pageSize: 5,
+      showDel: false,
+      visibleUsers: [],
+    }
+  },
+
+  beforeMount: function () {
+    this.updateUserList()
+  },
+
+  methods: {
+    updatePage(pageNumber) {
+      this.currentPage = pageNumber
+      this.updateUserList()
+    },
+    updateUserList() {
+      this.visibleUsers = this.userList.slice(
+        this.currentPage * this.pageSize,
+        this.currentPage * this.pageSize + this.pageSize
+      )
+      if (this.visibleUsers.length == 0 && this.currentPage > 0) {
+        this.updatePage(this.currentPage - 1)
+      }
+    },
   },
 }
 </script>
