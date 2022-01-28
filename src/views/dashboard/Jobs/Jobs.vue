@@ -52,7 +52,7 @@
         <div>
           <div class="mr-6">
             <router-link
-              to="/createJob"
+              to="/create"
               class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600"
             >
               <svg
@@ -436,7 +436,6 @@
       </table>
     </div>
 
-    <create :show="showModal" @close="showModal = false"> </create>
     <deletejob :show="showDel" @close="showDel = false"> </deletejob>
   </div>
 </template>
@@ -445,31 +444,31 @@
 import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
-import create from '../../../components/create.vue'
 import deletejob from '../../../components/layouts/deleteModal.vue'
+import { useRoute } from 'vue-router'
 
 export default {
   components: {
     Menu,
     MenuButton,
     MenuItems,
-    create,
     deletejob,
     MenuItem,
   },
 
   setup() {
     const selectAll = ref(false)
+    const route = useRoute()
 
     return {
       userList,
       selectAll,
+      route,
     }
   },
 
   data() {
     return {
-      showModal: false,
       showDel: false,
     }
   },

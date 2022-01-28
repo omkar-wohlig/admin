@@ -11,7 +11,7 @@ const routes = [
         component: () => import('@/views/dashboard/Jobs/Jobs.vue'),
       },
       {
-        path: '/create',
+        path: 'create',
         name: 'create-job',
         component: () => import('@/views/dashboard/Jobs/createJob.vue'),
       },
@@ -22,7 +22,7 @@ const routes = [
       },
       {
         path: '/users/create',
-        name: 'create-job',
+        name: 'create-user',
         component: () => import('@/views/dashboard/Users/CreateUser.vue'),
       },
     ],
