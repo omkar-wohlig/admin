@@ -1,1 +1,1 @@
-# HR Hiring Process Automation UI UX
+# HR Hiring Process Automation UI
