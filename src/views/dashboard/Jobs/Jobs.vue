@@ -52,8 +52,8 @@
         <div>
           <div class="mr-6">
             <button
-              @click="showModal = true"
               class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600"
+              @click="showModal = true"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -199,11 +199,11 @@
                       </MenuItem>
                       <MenuItem v-slot="{ active }">
                         <button
-                          @click="showDel = true"
                           :class="[
                             active ? 'bg-red-400 text-white' : 'text-gray-900',
                             'group flex rounded-md items-center w-full px-2 py-2 text-sm',
                           ]"
+                          @click="showDel = true"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
