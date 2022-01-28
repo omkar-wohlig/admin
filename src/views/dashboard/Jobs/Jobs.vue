@@ -7,7 +7,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="h-2 w-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
       </svg>
-      <span class="text-gray-600">Users</span>
+      <span class="text-gray-600">Jobs</span>
     </div>
   </div>
 
@@ -45,7 +45,7 @@
                 border border-gray-300
                 focus:outline-none focus:ring-gray-500 focus:ring-gray-500 focus:z-10
               "
-              placeholder="Search user"
+              placeholder="Search job"
             />
           </div>
         </div>
@@ -89,7 +89,7 @@
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
-          <tr v-for="user in userList" :key="user.id">
+          <tr v-for="job in visibleJobs" :visibleJobs='visibleJobs' :currentPage='currentPage' :key="job.id">
             <td class="p-2">
               <input
                 type="checkbox"
@@ -98,23 +98,24 @@
               />
             </td>
             <td class="flex items-center py-4">
-              <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="user.avatar" alt="" />
+              <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="job.avatar" alt="" />
               <div class="px-4">
                 <div>
-                  <a href="#" class="text-gray-600 font-bolder">{{ user.name }}</a>
+                  <a href="#" class="text-gray-600 font-bolder">{{ job.name }}</a>
                 </div>
                 <div class="font-bold text-sm">
-                  {{ user.email }}
+                  {{ job.email }}
                 </div>
               </div>
             </td>
-            <td>{{ user.role }}</td>
+            <td>{{ job.role }}</td>
             <td>
-              <span v-if="user.isActive" class="px-2 py-1 rounded text-xs text-white bg-green-500">Active</span>
+              <span v-if="job.isActive" class="px-2 py-1 rounded text-xs text-white bg-green-500">Active</span>
               <span v-else class="px-2 py-1 rounded text-xs text-white bg-red-500">Suspended</span>
             </td>
-            <td>{{ user.lastActivity }}</td>
-            <td>{{ user.joinDate }}</td>
+            <td>{{ job.status }}</td>
+            <td>{{ job.lastActivity }}</td>
+            <td>{{ job.joinDate }}</td>
             <td class="text-center">
               <Menu as="div" class="relative inline-block text-left">
                 <div>
@@ -245,189 +246,12 @@
                   </p>
                 </div>
                 <div>
-                  <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                    <a
-                      href="#"
-                      class="
-                        relative
-                        inline-flex
-                        items-center
-                        px-2
-                        rounded-l-md
-                        border border-gray-300
-                        text-sm
-                        font-medium
-                        text-gray-500
-                        hover:bg-gray-50
-                      "
-                    >
-                      <span class="sr-only">Previous</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </a>
-                    <!-- Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
-                    <a
-                      href="#"
-                      aria-current="page"
-                      class="
-                        z-10
-                        bg-indigo-50
-                        border-indigo-500
-                        text-indigo-600
-                        relative
-                        inline-flex
-                        items-center
-                        px-4
-                        py-1
-                        border
-                        text-sm
-                        font-medium
-                      "
-                    >
-                      1
-                    </a>
-                    <a
-                      href="#"
-                      class="
-                        border-gray-300
-                        text-gray-500
-                        hover:bg-gray-50
-                        relative
-                        inline-flex
-                        items-center
-                        px-4
-                        py-1
-                        border
-                        text-sm
-                        font-medium
-                      "
-                    >
-                      2
-                    </a>
-                    <a
-                      href="#"
-                      class="
-                        border-gray-300
-                        text-gray-500
-                        hover:bg-gray-50
-                        hidden
-                        md:inline-flex
-                        relative
-                        items-center
-                        px-4
-                        py-1
-                        border
-                        text-sm
-                        font-medium
-                      "
-                    >
-                      3
-                    </a>
-                    <span
-                      class="
-                        relative
-                        inline-flex
-                        items-center
-                        px-4
-                        py-1
-                        border border-gray-300
-                        text-sm
-                        font-medium
-                        text-gray-700
-                      "
-                    >
-                      ...
-                    </span>
-                    <a
-                      href="#"
-                      class="
-                        border-gray-300
-                        text-gray-500
-                        hover:bg-gray-50
-                        hidden
-                        md:inline-flex
-                        relative
-                        items-center
-                        px-4
-                        py-1
-                        border
-                        text-sm
-                        font-medium
-                      "
-                    >
-                      8
-                    </a>
-                    <a
-                      href="#"
-                      class="
-                        border-gray-300
-                        text-gray-500
-                        hover:bg-gray-50
-                        relative
-                        inline-flex
-                        items-center
-                        px-4
-                        py-1
-                        border
-                        text-sm
-                        font-medium
-                      "
-                    >
-                      9
-                    </a>
-                    <a
-                      href="#"
-                      class="
-                        border-gray-300
-                        text-gray-500
-                        hover:bg-gray-50
-                        relative
-                        inline-flex
-                        items-center
-                        px-4
-                        py-1
-                        border
-                        text-sm
-                        font-medium
-                      "
-                    >
-                      10
-                    </a>
-                    <a
-                      href="#"
-                      class="
-                        relative
-                        inline-flex
-                        items-center
-                        px-2
-                        py-1
-                        rounded-r-md
-                        border border-gray-300
-                        text-sm
-                        font-medium
-                        text-gray-500
-                        hover:bg-gray-50
-                      "
-                    >
-                      <span class="sr-only">Next</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </nav>
+                  <pagination>
+                    :userList="userList"
+                    @page:update="updatePage"
+                    :currentPage="currentPage"
+                    :pageSize="pageSize"
+                  </pagination>
                 </div>
               </div>
             </td>
@@ -447,6 +271,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
 import create from '../../../components/create.vue'
 import deletejob from '../../../components/layouts/deleteModal.vue'
+import pagination from '../../../components/layouts/Pagination.vue'
 
 export default {
   components: {
@@ -456,6 +281,7 @@ export default {
     create,
     deletejob,
     MenuItem,
+    pagination,
   },
 
   setup() {
@@ -469,9 +295,32 @@ export default {
 
   data() {
     return {
+      currentPage: 0,
+      pageSize: 5,
       showModal: false,
       showDel: false,
+      visibleJobs: [],
     }
+  },
+  
+  beforeMount: function() {
+    this.updateJobList()
+  },
+
+  methods: {
+    updatePage(pageNumber) {
+      this.currentPage = pageNumber
+      this.updateJobList()
+    },
+    updateJobList() {
+      this.visbleJobs = this.userList.slice(
+        this.currentPage * this.pageSize,
+        this.currentPage * this.pageSize + this.pageSize
+      )
+      if(this.visibleJobs.length == 0 && this.currentPage>0) {
+        this.updatePage(this.currentPage - 1)
+      }
+    },
   },
 }
 </script>
