@@ -8,18 +8,33 @@ const routes = [
     children: [
       {
         name: 'jobs',
-        path: '',
+        path: '/jobs',
         component: () => import('@/views/dashboard/Jobs/Jobs.vue'),
       },
       {
-        path: 'users',
+        path: '/users',
         name: 'user-list',
         component: () => import('@/views/dashboard/Users/UserList.vue'),
       },
       {
-        path: 'process',
+        path: '/process',
         name: 'process-list',
         component: () => import('@/views/dashboard/Users/UserList.vue'),
+      },
+      {
+        path: '/jobs/create',
+        name: 'createjob',
+        component: () => import('@/views/dashboard/Jobs/createJob.vue'),
+      },
+      {
+        path: '/edit',
+        name: 'editjob',
+        component: () => import('@/views/dashboard/Jobs/editJob.vue'),
+      },
+      {
+        path: '/users/create',
+        name: 'create-user',
+        component: () => import('@/views/dashboard/Users/CreateUser.vue'),
       },
     ],
   },
@@ -27,21 +42,6 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('@/views/Login.vue'),
-  },
-  {
-    path: '/create',
-    name: 'createjob',
-    component: () => import('@/views/dashboard/Jobs/createJob.vue'),
-  },
-  {
-    path: '/edit',
-    name: 'editjob',
-    component: () => import('@/views/dashboard/Jobs/editJob.vue'),
-  },
-  {
-    path: '/users/create',
-    name: 'create-user',
-    component: () => import('@/views/dashboard/Users/CreateUser.vue'),
   },
 ]
 
