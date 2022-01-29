@@ -233,17 +233,16 @@
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="7" class="py-2">
-
-                <div>
-                  <pagination
-                    :userList="userList"
-                    @page:update="updatePage"
+            <td colspan="8" class="py-2 px-6">
+                <div class="ml-10">
+                  <VuePaginationTw
+                    :totalItems="totalUsers"
                     :currentPage="currentPage"
-                    :pageSize="pageSize">
-                  </pagination>
+                    :perPage="pageSize"
+                    @pageChanged="updatePage"
+                    :goButton="false"
+                  />
                 </div>
-              
             </td>
           </tr>
         </tfoot>
@@ -257,9 +256,9 @@
 <script>
 import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+import VuePaginationTw from "vue-pagination-tw";
 import { ref } from 'vue'
 import deletejob from '../../../components/layouts/deleteModal.vue'
-import Pagination from '../../../components/layouts/Pagination.vue'
 import { useRoute } from 'vue-router'
 
 export default {
@@ -269,7 +268,7 @@ export default {
     MenuItems,
     deletejob,
     MenuItem,
-    Pagination,
+    VuePaginationTw,
   },
 
   setup() {
@@ -285,10 +284,11 @@ export default {
 
   data() {
     return {
-      currentPage: 0,
-      pageSize: 5,
+      currentPage: 1,
+      pageSize: 3,
       showDel: false,
       visibleUsers: [],
+      totalUsers: userList.length,
     }
   },
 
@@ -303,8 +303,8 @@ export default {
     },
     updateUserList() {
       this.visibleUsers = this.userList.slice(
-        this.currentPage * this.pageSize,
-        this.currentPage * this.pageSize + this.pageSize
+        (this.currentPage-1) * this.pageSize,
+        (this.currentPage-1) * this.pageSize + this.pageSize
       )
       if (this.visibleUsers.length == 0 && this.currentPage > 0) {
         this.updatePage(this.currentPage - 1)
