@@ -81,11 +81,9 @@
                 class="h-5 w-5 text-blue-500 border-gray-300 rounded cursor-pointer focus:ring-0"
               />
             </th>
-            <th class="text-left text-gray-600">JOB</th>
+            <th class="text-left text-gray-600">JOB NAME</th>
             <th class="text-left text-gray-600">DESCRIPTION</th>
             <th class="text-left text-gray-600">STATUS</th>
-            <th class="text-left text-gray-600">LAST ACTIVITY</th>
-            <th class="text-left text-gray-600">JOIN DATE</th>
             <th class="text-center text-gray-600">ACTIONS</th>
           </tr>
         </thead>
@@ -99,24 +97,16 @@
               />
             </td>
             <td class="flex items-center py-4">
-              <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="job.avatar" alt="" />
-              <div class="px-4">
-                <div>
+              <div >
                   <a href="#" class="text-gray-600 font-bolder">{{ job.name }}</a>
-                </div>
-                <div class="font-bold text-sm">
-                  {{ job.email }}
-                </div>
               </div>
             </td>
-            <td>{{ job.role }}</td>
+            <td>{{ job.description }}</td>
             <td>
-              <span v-if="job.isActive" class="px-2 py-1 rounded text-xs text-white bg-green-500">Active</span>
-              <span v-else class="px-2 py-1 rounded text-xs text-white bg-red-500">Suspended</span>
+              <span v-if="job.status === 'enabled'" class="px-2 py-1 rounded text-xs text-white bg-green-500">Enabled</span>
+              <span v-else-if="job.status === 'disabled'" class="px-2 py-1 rounded text-xs text-white bg-red-500">Disabled</span>
+              <span v-else-if="job.status === 'archived'" class="px-2 py-1 rounded text-xs text-white bg-yellow-500">Archived</span>
             </td>
-            <td>{{ job.status }}</td>
-            <td>{{ job.lastActivity }}</td>
-            <td>{{ job.joinDate }}</td>
             <td class="text-center">
               <Menu as="div" class="relative inline-block text-left">
                 <div>
@@ -254,7 +244,7 @@
 </template>
 
 <script>
-import userList from '@/data/users/userList.json'
+import jobList from '@/data/jobs/jobList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
 import VuePaginationTw from "vue-pagination-tw";
@@ -276,7 +266,7 @@ export default {
     const route = useRoute()
 
     return {
-      userList,
+      jobList,
       selectAll,
       route,
     }
@@ -288,7 +278,7 @@ export default {
       pageSize: 3,
       showDel: false,
       visibleJobs: [],
-      totalJobs: userList.length,
+      totalJobs: jobList.length,
     }
   },
 
@@ -302,7 +292,7 @@ export default {
       this.updateJobList()
     },
     updateJobList() {
-      this.visibleJobs = this.userList.slice(
+      this.visibleJobs = this.jobList.slice(
         (this.currentPage-1) * this.pageSize,
         (this.currentPage-1) * this.pageSize + this.pageSize
       )
