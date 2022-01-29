@@ -27,7 +27,7 @@ const routes = [
         component: () => import('@/views/dashboard/Jobs/createJob.vue'),
       },
       {
-        path: '/edit',
+        path: '/jobs/edit',
         name: 'editjob',
         component: () => import('@/views/dashboard/Jobs/editJob.vue'),
       },

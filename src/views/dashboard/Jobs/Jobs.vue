@@ -52,7 +52,7 @@
         <div>
           <div class="mr-6">
             <router-link
-              to="/create"
+              to="/jobs/create"
               class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600"
               
             >
@@ -167,7 +167,7 @@
                     <div class="px-1 py-1">
                       <MenuItem v-slot="{ active }">
                         <router-link
-                        to="/edit"
+                        to="/jobs/edit"
                           :class="[
                             active ? 'bg-gray-400 text-white' : 'text-gray-900',
                             'group flex rounded-md items-center w-full px-2 py-2 text-sm',
