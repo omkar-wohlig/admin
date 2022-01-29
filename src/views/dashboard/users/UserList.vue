@@ -82,10 +82,9 @@
               />
             </th>
             <th class="text-left text-gray-600">NAME</th>
-            <th class="text-left text-gray-600">DESCRIPTION</th>
+            <th class="text-left text-gray-600">EMAIL</th>
+            <th class="text-left text-gray-600">ACCESS LEVEL</th>
             <th class="text-left text-gray-600">STATUS</th>
-            <th class="text-left text-gray-600">LAST ACTIVITY</th>
-            <th class="text-left text-gray-600">JOIN DATE</th>
             <th class="text-center text-gray-600">ACTIONS</th>
           </tr>
         </thead>
@@ -99,24 +98,17 @@
               />
             </td>
             <td class="flex items-center py-4">
-              <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="user.avatar" alt="" />
-              <div class="px-4">
-                <div>
+              <div >
                   <a href="#" class="text-gray-600 font-bolder">{{ user.name }}</a>
-                </div>
-                <div class="font-bold text-sm">
-                  {{ user.email }}
-                </div>
               </div>
             </td>
-            <td>{{ user.role }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.accessLevel }}</td>
             <td>
-              <span v-if="user.isActive" class="px-2 py-1 rounded text-xs text-white bg-green-500">Active</span>
-              <span v-else class="px-2 py-1 rounded text-xs text-white bg-red-500">Suspended</span>
+              <span v-if="user.status === 'enabled'" class="px-2 py-1 rounded text-xs text-white bg-green-500">Enabled</span>
+              <span v-else-if="user.status === 'disabled'" class="px-2 py-1 rounded text-xs text-white bg-red-500">Disabled</span>
+              <span v-else-if="user.status === 'archived'" class="px-2 py-1 rounded text-xs text-white bg-yellow-500">Archived</span>
             </td>
-            <td>{{ user.status }}</td>
-            <td>{{ user.lastActivity }}</td>
-            <td>{{ user.joinDate }}</td>
             <td class="text-center">
               <Menu as="div" class="relative inline-block text-left">
                 <div>
