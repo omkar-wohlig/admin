@@ -234,18 +234,7 @@
         <tfoot>
           <tr>
             <td colspan="7" class="py-2">
-              <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                <div>
-                  <p class="text-sm text-gray-500">
-                    Showing
-                    <span class="font-medium">1</span>
-                    to
-                    <span class="font-medium">5</span>
-                    of
-                    <span class="font-medium">42</span>
-                    results
-                  </p>
-                </div>
+
                 <div>
                   <pagination
                     :userList="userList"
@@ -254,7 +243,7 @@
                     :pageSize="pageSize">
                   </pagination>
                 </div>
-              </div>
+              
             </td>
           </tr>
         </tfoot>
