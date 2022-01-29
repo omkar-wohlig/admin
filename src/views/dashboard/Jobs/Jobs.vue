@@ -90,7 +90,7 @@
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
-          <tr v-for="job in userList" :key="job.id">
+          <tr v-for="job in visibleJobs" :visibleJobs='visibleJobs' :currentPage="currentPage" :key="job.id">
             <td class="p-2">
               <input
                 type="checkbox"
@@ -233,28 +233,16 @@
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="7" class="py-2">
-              <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                <div>
-                  <p class="text-sm text-gray-500">
-                    Showing
-                    <span class="font-medium">1</span>
-                    to
-                    <span class="font-medium">5</span>
-                    of
-                    <span class="font-medium">42</span>
-                    results
-                  </p>
-                </div>
-                <div>
-                  <!-- <pagination>
-                    :userList="userList"
-                    @page:update="updatePage"
+            <td colspan="8" class="py-2 px-6">
+                <div class="ml-10">
+                  <VuePaginationTw
+                    :totalItems="totalJobs"
                     :currentPage="currentPage"
-                    :pageSize="pageSize"
-                  </pagination> -->
+                    :perPage="pageSize"
+                    @pageChanged="updatePage"
+                    :goButton="false"
+                  />
                 </div>
-              </div>
             </td>
           </tr>
         </tfoot>
@@ -269,6 +257,7 @@
 import userList from '@/data/users/userList.json'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { ref } from 'vue'
+import VuePaginationTw from "vue-pagination-tw";
 import deletejob from '../../../components/layouts/deleteModal.vue'
 import { useRoute } from 'vue-router'
 
@@ -279,6 +268,7 @@ export default {
     MenuItems,
     deletejob,
     MenuItem,
+    VuePaginationTw,
   },
 
   setup() {
@@ -294,8 +284,11 @@ export default {
 
   data() {
     return {
+      currentPage: 1,
+      pageSize: 3,
       showDel: false,
       visibleJobs: [],
+      totalJobs: userList.length,
     }
   },
 
@@ -309,9 +302,9 @@ export default {
       this.updateJobList()
     },
     updateJobList() {
-      this.visbleJobs = this.userList.slice(
-        this.currentPage * this.pageSize,
-        this.currentPage * this.pageSize + this.pageSize
+      this.visibleJobs = this.userList.slice(
+        (this.currentPage-1) * this.pageSize,
+        (this.currentPage-1) * this.pageSize + this.pageSize
       )
       if (this.visibleJobs.length == 0 && this.currentPage > 0) {
         this.updatePage(this.currentPage - 1)
