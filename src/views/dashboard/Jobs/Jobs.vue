@@ -54,7 +54,7 @@
             <router-link
               to="/create"
               class="flex items-center bg-green-500 p-2 text-white rounded text-sm hover:bg-green-600"
-              @click="showModal = true"
+              
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
