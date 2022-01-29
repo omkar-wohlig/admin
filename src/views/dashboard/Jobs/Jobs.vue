@@ -176,7 +176,8 @@
                   >
                     <div class="px-1 py-1">
                       <MenuItem v-slot="{ active }">
-                        <button
+                        <router-link
+                        to="/edit"
                           :class="[
                             active ? 'bg-gray-400 text-white' : 'text-gray-900',
                             'group flex rounded-md items-center w-full px-2 py-2 text-sm',
@@ -197,7 +198,7 @@
                             />
                           </svg>
                           Edit
-                        </button>
+                        </router-link>
                       </MenuItem>
                       <MenuItem v-slot="{ active }">
                         <button

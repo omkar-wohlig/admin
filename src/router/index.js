@@ -16,6 +16,11 @@ const routes = [
         name: 'user-list',
         component: () => import('@/views/dashboard/Users/UserList.vue'),
       },
+      {
+        path: 'process',
+        name: 'process-list',
+        component: () => import('@/views/dashboard/Users/UserList.vue'),
+      },
     ],
   },
   {
@@ -27,6 +32,11 @@ const routes = [
     path: '/create',
     name: 'createjob',
     component: () => import('@/views/dashboard/Jobs/createJob.vue'),
+  },
+  {
+    path: '/edit',
+    name: 'editjob',
+    component: () => import('@/views/dashboard/Jobs/editJob.vue'),
   },
   {
     path: '/users/create',

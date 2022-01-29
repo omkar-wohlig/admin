@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
     <div class="max-w-md w-full">
-      <h2 class="text-center text-2xl font-bold text-gray-800 mb-6">Add Job</h2>
+      <h2 class="text-center text-2xl font-bold text-gray-800 mb-6">Edit Job</h2>
 
       <form class="space-y-4" @submit.prevent="$router.push({ name: 'jobs' })">
         <div class="relative text-gray-400">
@@ -177,7 +177,7 @@
               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
             "
           >
-            Submit Job
+            Edit Job
           </button>
         </div>
       </form>

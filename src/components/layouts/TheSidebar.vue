@@ -54,7 +54,7 @@
                 d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
               />
             </svg>
-            Candidates
+            Candidate
           </a>
         </li>
 
@@ -165,14 +165,19 @@
                     </a>
                   </li>
                 </router-link>
-                <li class="px-8 hover:bg-gray-700">
-                  <a href="#" class="py-3 flex items-center">
+                <router-link v-slot="{ isExactActive, href, navigate }" to="/process" custom>
+                <li
+                    class="px-8 hover:bg-gray-700"
+                    :class="[isExactActive ? 'bg-gray-500 text-gray-800' : 'hover:bg-gray-700']"
+                  >
+                    <a class="py-3 flex items-center" :href="href" @click="navigate">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                     </svg>
                     Process
                   </a>
                 </li>
+                </router-link>
                 <li class="px-8 hover:bg-gray-700">
                   <a href="#" class="py-3 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 16 16">
