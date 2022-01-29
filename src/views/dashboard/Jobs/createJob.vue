@@ -43,8 +43,9 @@
           Sign in with Google
         </button> -->
       </div>
+      <!-- $router.push({ name: 'dashboard' }) -->
 
-      <form class="space-y-4" @submit.prevent="$router.push({ name: 'dashboard' })">
+      <form class="space-y-4" @submit.prevent="$router.push({ name: 'jobs' })">
         <div class="relative text-gray-400">
           <span class="absolute inset-y-0 left-0 flex items-center pl-2">
             <svg
@@ -63,10 +64,11 @@
             </svg>
           </span>
           <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
+            id="jobName"
+            v-model="jobName"
+            name="jobName"
+            type="text"
+            autocomplete="jobName"
             class="
               w-full
               py-4
@@ -99,10 +101,9 @@
             </svg>
           </span>
           <input
-            id="password"
-            name="password"
-            type="password"
-            autocomplete="current-password"
+            id="description"
+            name="description"
+            type="description"
             required=""
             class="
               w-full
@@ -135,10 +136,9 @@
             </svg>
           </span>
           <input
-            id="password"
-            name="password"
-            type="password"
-            autocomplete="current-password"
+            id="process"
+            name="process"
+            type="process"
             required=""
             class="
               w-full
@@ -149,7 +149,7 @@
               border border-gray-300
               focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10
             "
-            placeholder="Status"
+            placeholder="Select all processes that apply"
           />
         </div>
 
@@ -202,5 +202,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      jobName: '',
+    }
+  },
+  methods: {
+    submitForm() {
+      console.log('Jobname: ' + this.jobName)
+    },
+  },
+}
 </script>

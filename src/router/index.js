@@ -7,6 +7,7 @@ const routes = [
     component: () => import('@/views/Dashboard.vue'),
     children: [
       {
+        name: 'jobs',
         path: '',
         component: () => import('@/views/dashboard/Jobs/Jobs.vue'),
       },
