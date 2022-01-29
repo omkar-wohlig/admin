@@ -10,7 +10,7 @@
       <ul class="flex flex-col">
         <li class="px-4 py-2 text-xs uppercase tracking-wider text-gray-500 font-bold">Section</li>
 
-        <router-link v-slot="{ isExactActive, href, navigate }" to="/" custom>
+        <router-link v-slot="{ isExactActive, href, navigate }" to="/jobs" custom>
           <li class="px-4 cursor-pointer" :class="[isExactActive ? 'bg-gray-500 text-gray-800' : 'hover:bg-gray-700']">
             <a class="py-3 flex items-center" :href="href" @click="navigate">
               <svg
